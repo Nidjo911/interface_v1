@@ -1,0 +1,59 @@
+@use 'sass:list';
+
+/* 
+$color-prim: #4c4A41 ;
+$color-sec: #637F42;
+$color-bonus: #9F7B21;
+
+$color-camp-green: #3B6B35;
+$color-camp-khakki: #BFAA72;
+$color-camp-complementary: #645B16;
+
+$color--features--camp: #ebaa48;
+$color--container--bg: #ceedff;
+*/
+
+
+$pc1: #89b3e3;
+$pc2: #fafefa;
+$complementary: #e3c189;
+
+$prim: #252570;
+$second: #f9f9fd;
+$background: #f7f7fc;
+
+
+$room--features--color: #eff4fa;
+$room--container--bg--color: #ffffff;
+
+$simple-gradient: $pc1, $pc2;
+$complex-gradient: $pc1, $pc2, $complementary;
+
+$scheme-complex-gradient: $prim, $complex-gradient;
+$text-underline-clr: #bbd0dcef;
+
+
+@mixin color-scheme($text, $bg) {
+    @if list.length($bg)==1 {
+        background-color: $bg;
+    }
+  
+    @else {
+        /*         background-image: linear-gradient(to top left, $bg); */
+        background-image: linear-gradient(to bottom right, $bg);
+    }
+  
+    color: $text;
+  }
+  
+  .gradient--class {
+    @include color-scheme($scheme-complex-gradient ...)
+  }
+  
+  @mixin opacity-background($opacity) {
+    background-color: rgba(245, 245, 245, $opacity);
+  
+  }
+
+  $test--color--bg: none;
+  $amenities--border: 1px solid grey;

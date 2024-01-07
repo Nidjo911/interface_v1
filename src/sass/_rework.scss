@@ -1,0 +1,197 @@
+/* Define a fixed-width container */
+.container {
+    width: 100%;
+    max-width: 1140px;
+    /* Adjust the maximum width as needed */
+    margin-right: auto;
+    margin-left: auto;
+}
+
+/* Define a responsive container up to the small breakpoint */
+.container-sm {
+    width: 100%;
+    max-width: 80vw;
+    /* Adjust the maximum width as needed for small screens */
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.flex {
+    display: flex;
+    flex-direction: row;
+}
+
+/* Center text horizontally */
+.text-center {
+    text-align: center;
+}
+
+/* Margin-bottom for large screens */
+.mb-lg-5 {
+    margin-bottom: 3rem;
+    /* Adjust the margin as needed */
+}
+
+/* Margin-top */
+.mt-5 {
+    margin-top: 3rem;
+    /* Adjust the margin as needed */
+}
+
+
+/* Display flex from medium to large screens */
+/* .d-md-flex {
+    display: flex;
+} */
+
+/* Flex direction: row */
+.flex-row {
+    flex-direction: row;
+}
+
+/* Box decoration: highlighted */
+.bd-highlight {
+    box-shadow: 0 0 0 0.2rem rgba(108, 117, 125, 0.25);
+    /* Adjust color and size as needed */
+}
+
+/* Margin-bottom */
+.mb-3 {
+    margin-bottom: 1rem;
+    /* Adjust the margin as needed */
+}
+
+/* Column width for small screens */
+.col-sm-12 {
+    flex: 0 0 100%;
+    /* 12 columns on small screens */
+    max-width: 100%;
+}
+
+/* Column width for medium screens */
+@media (min-width: 768px) {
+    .col-md-8 {
+        flex: 0 0 66.666667%;
+        /* 8 columns on medium screens */
+        max-width: 66.666667%;
+    }
+
+    .d-lg-flex {
+        display: flex;
+    }
+}
+
+/* Column width for large screens */
+@media (min-width: 992px) {
+    .col-lg-8 {
+        flex: 0 0 66.666667%;
+        /* 8 columns on large screens */
+        max-width: 66.666667%;
+    }
+}
+
+
+/* Margin-top */
+.mt-3 {
+    margin-top: 0.75rem;
+    /* Adjust the margin as needed */
+}
+
+
+/* ------------------------------------------- */
+
+/* Footer part */
+
+/* For small screens (col-sm-12) */
+@media (min-width: 576px) {
+    .col-sm-12 {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+  }
+  
+  /* For medium screens (col-md) */
+  @media (min-width: 768px) {
+    .col-md {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+  }
+  
+  /* For large screens (col-lg) */
+  @media (min-width: 992px) {
+    .col-lg {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+  }
+  
+  /* For extra large screens (col-xl) */
+  @media (min-width: 1200px) {
+    .col-xl {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+  }
+  
+  /* For extra small screens (col-12) */
+  @media (max-width: 575.98px) {
+    .col-12 {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+  }
+  
+  /* For small screens (col-sm-12) */
+  @media (min-width: 576px) {
+    .col-sm-12 {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+  }
+  
+  /* For medium screens (col-md-2) */
+  @media (min-width: 768px) {
+    .col-md-2 {
+      flex: 0 0 16.66667%;
+      max-width: 16.66667%;
+    }
+  }
+  
+  /* For large screens (col-lg-2) */
+  @media (min-width: 992px) {
+    .col-lg-2 {
+      flex: 0 0 16.66667%;
+      max-width: 16.66667%;
+    }
+  }
+  
+  /* For extra large screens (col-xl-2) */
+  @media (min-width: 1200px) {
+    .col-xl-2 {
+      flex: 0 0 16.66667%;
+      max-width: 16.66667%;
+    }
+  }
+  
+  /* Footer class */
+  .footer {
+    position: relative;
+    padding: 1rem;
+    background-color: #f8f9fa;
+    border-top: 1px solid #dee2e6;
+  }
+  
+  /* Margin top classes */
+  .mt-4 {
+    margin-top: 1.5rem;
+  }
+  
+  .mt-lg-4 {
+    margin-top: 1.5rem;
+  }
+  
+  .mt-md-2 {
+    margin-top: 0.5rem;
+  }
+  

@@ -1,0 +1,17 @@
+/* Base styling for the navigation bar */
+.navbar {
+    background-color: #f8f9fa; /* Light background color */
+    padding: 15px; /* Adjust the padding as needed */
+    border: 1px solid #dee2e6; /* Border color */
+  }
+  
+  /* Light color scheme for the text */
+  .navbar-light {
+    color: #007bff; /* Light blue color, adjust as needed */
+  }
+  
+  /* Center the contents horizontally using flexbox */
+  .justify-content-center {
+    display: flex;
+    justify-content: center;
+  }

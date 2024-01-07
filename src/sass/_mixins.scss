@@ -1,0 +1,160 @@
+
+  @use 'sass:list';
+
+  @mixin flex($direction, $wrap) {
+  display: flex;
+  flex-direction: $direction;
+  flex-wrap: $wrap;
+}
+
+/* Media queries mixinss -------- */
+$breakpoint-small: 600px;
+$breakpoint-med-small: 960px;
+$breakpoint-med: 1175px;
+$breakpoint-lg: 1575px;
+
+/* $custom: 1000px; */
+
+@mixin screen($size, $pixels: $breakpoint-small) {
+  @if $size == 'small' {
+    @media screen and ( max-width : $breakpoint-small) {
+        @content;
+    }
+  }
+
+  @else if $size == 'med-small' {
+    @media (min-width: $breakpoint-small )  and ( max-width: $breakpoint-med-small ) {
+        @content;
+    }
+  }
+
+  @else if $size == 'med' {
+    @media (min-width: $breakpoint-med-small )  and ( max-width: $breakpoint-med ) {
+        @content;
+    }
+  }
+
+ @else if $size == 'large' {
+    @media screen and ( min-width: $breakpoint-med) {
+        @content;
+    }
+  }
+
+  @else if $size == 'xxlarge' {
+    @media screen and ( min-width: $breakpoint-lg) {
+        @content;
+    }
+  }
+
+  @else if $size == 'custom' {
+    @media screen and ( (min-width: $pixels ) ) {
+     @content;
+    }
+  }
+
+  @else {
+    @content;
+  }
+}
+
+/* .foo {
+  @include screen(large) {
+    width: 20%;
+  }
+  @include screen(med) {
+    width: 40%;
+  }
+  @include screen(med-small) {
+    width: 60%;
+  }
+  @include screen(small) {
+    width: 80%;
+  }
+  @include screen(custom, max, 400) {
+    width: 100%;
+  }
+} */
+
+/* Color mixins below */
+
+@mixin strong--text--color($color) {
+  color: rgb(0, 26, 51);
+  font-weight: 900;
+  text-shadow: 1px 1px 2px $color;
+}
+
+
+@mixin center($widthy){
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: $widthy;
+}
+
+
+@mixin testy($color: #ccc, $hover: black, $width: 2px, $vertical: top, $horizontal: left, $duration: 0.25s) {
+  box-shadow: inset 0 0 0 $width $color;
+  color: $color;
+  transition: color $duration;
+  position: relative;
+  
+  &::before,
+  &::after {
+    border: 0 solid transparent;
+    box-sizing: border-box;
+    content: '';
+    pointer-events: none;
+    position: absolute;
+    width: 0; height: 0;
+    
+    #{$vertical}: 0; 
+    #{$horizontal}: 0;
+  }
+
+  &::before {
+    $h-side: if($horizontal == 'left', 'right', 'left');
+    
+    border-#{$vertical}-width: $width;
+    border-#{$h-side}-width: $width;
+  }
+  
+  &::after {
+    $v-side: if($vertical == 'top', 'bottom', 'top');
+    
+    border-#{$v-side}-width: $width;
+    border-#{$horizontal}-width: $width;
+  }
+  
+  &:hover {
+    color: $hover;
+    
+    &::before,
+    &::after {
+      border-color: $hover;
+      transition: border-color 0s, width $duration, height $duration;
+      width: 100%;
+      height: 100%;
+    }
+    
+    &::before { transition-delay: 0s, 0s, $duration; }
+    
+    &::after { transition-delay: 0s, $duration, 0s; }
+  }
+}
+
+.draw-border {
+  @include testy(#58afd1, #ffe593, 4px, bottom, right);
+}
+
+//=== Button styling, semi-ignore
+.btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  line-height: 1.5;
+  font: 700 1.2rem 'Roboto Slab', sans-serif;
+  padding: 1em 2em;
+  letter-spacing: 0.05rem;
+  
+  &:focus { outline: 2px dotted #55d7dc; }
+}

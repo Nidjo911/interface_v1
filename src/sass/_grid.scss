@@ -1,0 +1,48 @@
+
+  .grid--card {
+    background-color: dodgerblue;
+    color: white;
+    padding: 1rem;
+    height: 4rem;
+    font-size: 1.6rem;
+  }
+  
+  .grid--cards {
+    overflow-x: hidden;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    column-gap: 2rem;
+    row-gap: 0.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    
+  }
+  
+  @media (min-width: 600px) {
+    .grid--cards { grid-template-columns: repeat(2, 1fr); }
+  }
+  
+  @media (min-width: 900px) {
+    .grid--cards { grid-template-columns: repeat(3, 1fr); }
+  }
+
+
+  .grid--amenities {
+    overflow-x: hidden;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    column-gap: 2rem;
+    row-gap: 0.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    
+  }
+  
+  @media (min-width: 600px) {
+    .grid--amenities { grid-template-columns: repeat(3, 1fr); }
+  }
+  
+  @media (min-width: 900px) {
+    .grid--amenities { grid-template-columns: repeat(4, 1fr); }
+  }
+  
