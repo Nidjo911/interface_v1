@@ -19,9 +19,11 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <head><meta charSet="UTF-8" /></head>
       <body className={inter.className}>
-        <Header />
-        <main>{children}</main>
-        <Footer />
+        <NotificationContextProvider>
+          <Header />
+          <main>{children}</main>
+          <Footer />
+        </NotificationContextProvider>
       </body>
     </html>
   )
