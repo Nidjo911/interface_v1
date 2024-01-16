@@ -1,10 +1,10 @@
-import Demo from "@/components/site/site"
-
-export default function Calc() {
+function InputPage(){
 
   return (
-    <>
-      <Demo />
-    </>
-  )
+      
+      <div>Input page</div>
+  ) 
+
 }
+
+export default InputPage
