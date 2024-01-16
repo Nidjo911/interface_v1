@@ -1,7 +1,6 @@
 import React from 'react'
 import { Fragment } from 'react'
 
-import '../../app/normalize.css'
 import '../../app/style.css'
 
 export default function Footer() {

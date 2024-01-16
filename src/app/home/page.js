@@ -1,10 +1,11 @@
-import Main from '../../components/main/main'
 
+
+import Data from "@/components/data/data"
 export default function Home() {
 
   return (
     <>
-      <Main />
+      <Data />
     </>
   )
 }

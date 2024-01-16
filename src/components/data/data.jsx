@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react'
-
 'use client'
+
+import React, { useState } from 'react'
 
 
 export default function Data() {
@@ -8,72 +8,67 @@ export default function Data() {
   const [profile, setProfile] = useState([{ freq: "", amp: "" }]);
 
 
-  const handleFrequencyChange = (e, index) => {
-    const newInputs = [...inputs];
-    newInputs[index].frequency = e.target.value;
-    setInputs(newInputs);
+  const handleFormChange = (e, index) => {
+    let currentData = [...profile];
+    currentData[index][e.target.name] = e.target.value;
+    setProfile(currentData);
   };
 
 
-  const handleAmplitudeChange = (e, index) => {
-    const newInputs = [...inputs];
-    newInputs[index].amplitude = e.target.value;
-    setInputs(newInputs);
+  const addProfileLine = () => {
+    let newLine = { freq: "", amp: "" }
+    setProfile([...profile, newLine]);
   };
 
-  const addInput = () => {
-    setInputs([...inputs, { frequency: '', amplitude: '' }]);
+  const removeProfileLineForever = () => {
+    
+
   };
 
-  const handleProfileAdd = () => {
 
-  }
-
-  const handleProfileDel = (i) => {
-
-  }
-
-  const handleSubmitProfile = (e) => {
+  const handleSubmitProfileForm = (e) => {
     e.preventDefault();
-    setProfile([]);
+    setProfile([profile]);
+    console.log(setProfile);
 
   }
 
   return (
     <>
+      <div>
+        <form onSubmit={handleSubmitProfileForm}>
+          {profile.map((value, index) => {
 
-      {/* Default inputs I need to begin with */}
-      <label htmlFor="freq">
-        <input type="number" name="freq" id="" value="" onChange={getVal} />
+            return (
+              <div className='flex' key={index}>
+                <input
+                  type="number"
+                  placeholder="freq"
+                  name="freq"
+                  value={value.freq}
+                  onChange={(event) => handleFormChange(index, event)}
+                  required
+                />
+                <input
+                  type="number"
+                  placeholder="amp"
+                  name="amp"
+                  value={value.amp}
+                  onChange={(event) => handleFormChange(index, event)}
+                  required
+                />
+                <button className="removeBtn">Remove profile line</button>
 
-      </label>
+              </div>
+            )
 
-      <label htmlFor="amp">
-        <input type="number" name="amp" id="" value="" onChange={getVal} />
-      </label>
+          } ) }
+          <button onClick={addProfileLine}>Add a new line</button>
+            < br />
+          <button onClick={handleSubmitProfileForm}>Submit</button>
+        </form>
 
-      <Form onSubmit="">
-        <input
-          type="text"
-          placeholder="Freq"
-          name="Freq"
-          value={profile.name}
-          onChange={(e) => handleFrequencyChange(e, index)}
-          required
-        />
-
-        <input
-          type="text"
-          placeholder="Amp"
-          name="Amp"
-          value={profile.name}
-          onChange={(e) => handleAmplitudeChange(e, index)}
-          required
-        />
-
-      </Form>
-
-
+      </div>
     </>
   );
 
