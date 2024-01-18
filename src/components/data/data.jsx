@@ -5,30 +5,31 @@ import dummyData from '@/database';
 
 export default function Data() {
 
-  const [profile, setProfile] = useState([{ freq: "", amp: "" }]);
+  const [profile, setProfile] = useState( [ {freq: "", amp: ""} ]);
 
-  const handleFormChange = (e, index) => {
+  const handleFormChange = (index, event) => {
     let currentData = [...profile];
-    currentData[index][e.target.name] = e.target.value;
+    currentData[index][event.target.name] = event.target.value;
     setProfile(currentData);
   };
 
 
   const addProfileLine = () => {
-    let newLine = { freq: "", amp: "" }
+    let newLine = { freq: "", amp: "" };
     setProfile([...profile, newLine]);
   };
 
-  const removeProfileLineForever = () => {
-    
+  const removeProfileLineForever = (index) => {
+    let data = [...profile];
+    data.splice(index, 1);
+    setProfile(data);
 
   };
 
 
   const handleSubmitProfileForm = (e) => {
     e.preventDefault();
-    setProfile([profile]);
-    console.log(setProfile);
+    console.log(profile);
 
   }
 
@@ -60,7 +61,7 @@ export default function Data() {
                   onChange={(event) => handleFormChange(index, event)}
                   required
                 />
-                <button className="removeBtn">Remove profile line</button>
+                <button onClick={()=>removeProfileLineForever(index)} className="removeBtn">Remove profile line</button>
 
               </div>
             )
