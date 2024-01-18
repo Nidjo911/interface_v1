@@ -1,12 +1,11 @@
 'use client'
 
 import React, { useState } from 'react'
-
+import dummyData from '@/database';
 
 export default function Data() {
 
   const [profile, setProfile] = useState([{ freq: "", amp: "" }]);
-
 
   const handleFormChange = (e, index) => {
     let currentData = [...profile];
@@ -31,6 +30,10 @@ export default function Data() {
     setProfile([profile]);
     console.log(setProfile);
 
+  }
+
+  const gimmeDummyData = () => {
+    setProfile(dummyData);
   }
 
   return (
@@ -67,6 +70,13 @@ export default function Data() {
             < br />
           <button onClick={handleSubmitProfileForm}>Submit</button>
         </form>
+
+      </div>
+
+      {/* make dummy data show when button is clicked */}
+
+      <div>
+          <button onClick={gimmeDummyData} type="button">Click to see example</button>
 
       </div>
     </>

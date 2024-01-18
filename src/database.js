@@ -1,19 +1,19 @@
-export default [{
-    id: 1,
-    value: 2,
-    name: "testdata"
-},
+/* Mark it somewhere to be named a profile */
 
-{
-    id: 2,
-    value: 4,
-    name: "testdatatwo"
-},
+/* --profile 1:-- */
 
+const dummyData = [{
+    freq: 10,
+    amp: 2,
+},
 {
-    id: 3,
-    value: 10,
-    name: "testdatathree"
+    freq: 100,
+    amp: 5,
+}, {
+    freq: 1000,
+    amp: 3,
 }
 
 ]
+
+export default dummyData;
